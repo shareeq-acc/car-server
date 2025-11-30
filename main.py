@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.services.data_service import DataService
 from app.services.ml_service import MLService
 from app.services.comparison_service import ComparisonService
@@ -11,6 +12,15 @@ app = FastAPI(
     title="PakWheels API",
     version="2.0.0",
     description="Car marketplace API with ML-powered features"
+)
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],  # Allow all headers
 )
 
 # Initialize services
