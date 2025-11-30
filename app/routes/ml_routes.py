@@ -57,19 +57,19 @@ def analyze_market_trend(
     return ml_controller.analyze_market_trend(make, model)
 
 
-@router.get("/demand-prediction")
-def predict_demand(
-    make: Optional[str] = Query(None, description="Car make"),
-    model: Optional[str] = Query(None, description="Car model (first word)"),
-    city: Optional[str] = Query(None, description="City")
-):
-    """Predict demand/popularity for make/model/city"""
-    return ml_controller.predict_demand(make, model, city)
+# @router.get("/demand-prediction")
+# def predict_demand(
+#     make: Optional[str] = Query(None, description="Car make"),
+#     model: Optional[str] = Query(None, description="Car model (first word)"),
+#     city: Optional[str] = Query(None, description="City")
+# ):
+#     """Predict demand/popularity for make/model/city"""
+#     return ml_controller.predict_demand(make, model, city)
 
 
-@router.get("/anomalies")
-def detect_anomalies(
-    limit: int = Query(50, ge=10, le=200, description="Number of results")
-):
-    """Detect overpriced and underpriced cars"""
-    return ml_controller.detect_anomalies(limit)
+# @router.get("/anomalies")
+# def detect_anomalies(
+#     limit: int = Query(50, ge=10, le=200, description="Number of results")
+# ):
+#     """Detect overpriced and underpriced cars"""
+#     return ml_controller.detect_anomalies(limit)
