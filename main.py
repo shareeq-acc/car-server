@@ -9,7 +9,7 @@ from app.controllers.comparison_controller import ComparisonController
 from app.routes import car_routes, ml_routes, comparison_routes
 
 app = FastAPI(
-    title="PakWheels API",
+    title="SenCar API",
     version="2.0.0",
     description="Car marketplace API with ML-powered features"
 )
